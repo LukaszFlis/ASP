@@ -173,6 +173,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DodajStanowisko.aspx" />
+    <Content Include="Dodanie_kandydat.aspx" />
     <Content Include="Dodanie_oferty.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -353,6 +355,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DodajStanowisko.aspx.cs">
+      <DependentUpon>DodajStanowisko.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DodajStanowisko.aspx.designer.cs">
+      <DependentUpon>DodajStanowisko.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dodanie_kandydat.aspx.cs">
+      <DependentUpon>Dodanie_kandydat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dodanie_kandydat.aspx.designer.cs">
+      <DependentUpon>Dodanie_kandydat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dodanie_oferty.aspx.cs">
       <DependentUpon>Dodanie_oferty.aspx</DependentUpon>

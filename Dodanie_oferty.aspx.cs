@@ -11,7 +11,9 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (User?.Identity.IsAuthenticated == false)
+                Response.Redirect("~/Account/Login.aspx");
+            //User?.Identity.Name
         }
         protected void Page_PreRender(object sender, EventArgs e)
         {
@@ -31,6 +33,19 @@ namespace WebApplication1
         protected void DV_dodaj_oferta_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
         {
             GV_Dodaj_oferta.DataBind();
+            GV_Dodaj_oferta.SelectRow(-1);
+        }
+
+        protected void DV_dodaj_oferta_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        {
+            GV_Dodaj_oferta.DataBind();
+            GV_Dodaj_oferta.SelectRow(-1);
+        }
+
+        protected void DV_dodaj_oferta_ItemDeleted(object sender, DetailsViewInsertedEventArgs e)
+        {
+            GV_Dodaj_oferta.DataBind();
+            GV_Dodaj_oferta.SelectRow(-1);
         }
     }
 }

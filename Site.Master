@@ -32,9 +32,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Strona główna</a></li>
-                        <li><a runat="server" href="~/Dodanie_oferty">Dodanie ofert</a></li>
-                        <li><a runat="server" href="~/filtruj_kandydat">Filtracja kandydata</a></li>
+                        <li><a runat="server" href="~/DodajStanowisko">Edycja Tabeli Stanowisko</a></li>
+                        <li><a runat="server" href="~/Dodanie_oferty">Edycja tabeli Oferta</a></li>
+                        <li><a runat="server" href="~/Dodanie_kandydat">Dodanie kandydata</a></li>
                         <li><a runat="server" href="~/Przegladanie_ofert">Przegląd ofert</a></li>
+                        <li><a runat="server" href="~/filtruj_kandydat">Filtracja kandydata</a></li>
                         <li><a runat="server" href="~/About">Informacje</a></li>
                         <li><a runat="server" href="~/Contact">Kontakt</a></li>
                     </ul>
@@ -59,6 +61,13 @@
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
