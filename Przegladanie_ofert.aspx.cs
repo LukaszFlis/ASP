@@ -16,14 +16,12 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (CheckBox1.Checked)
-            {
+             if (CheckBox1.Checked) {
                 GridView1.DataSource = SqlDataSource2;
-            }
-            else {
+             } else {
                 GridView1.DataSource = SqlDataSource1;
-            }
-            GridView1.DataBind();
+             }
+             GridView1.DataBind();
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)

@@ -22,15 +22,15 @@
     <br/>
     <br/>
     <asp:Label ID="Label1" runat="server" Text="Data_od"></asp:Label> 
-    <asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True" ></asp:TextBox> <br>
+    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox> <br>
     <asp:Label ID="Label2" runat="server" Text="Data_do"></asp:Label>
-    <asp:TextBox ID="TextBox2" runat="server" AutoPostBack="True" ></asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Nazwa_stanowiska"></asp:Label>
-    <asp:TextBox ID="TextBox3" runat="server" Enabled="False" Visible="False" AutoPostBack="True"></asp:TextBox>
+    <asp:TextBox ID="TextBox3" runat="server" Enabled="False" Visible="False"></asp:TextBox>
     <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" AutoPostBack="True" />
     <br />
-<asp:Button ID="Button1" runat="server" Text="wyszukaj" Width="179px" OnClick="Button1_Click"  />
+<asp:Button ID="Button1" runat="server" Text="wyszukaj" Width="179px" OnClick="Button1_Click"/>
 <br />
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" DeleteCommand="DELETE FROM [OFERTA] WHERE [Id_oferty] = @original_Id_oferty AND [Id_stanowiska] = @original_Id_stanowiska AND (([Forma_zatrudnienia] = @original_Forma_zatrudnienia) OR ([Forma_zatrudnienia] IS NULL AND @original_Forma_zatrudnienia IS NULL)) AND (([Etat_oferta] = @original_Etat_oferta) OR ([Etat_oferta] IS NULL AND @original_Etat_oferta IS NULL)) AND (([Wynagrodzenie_brutto] = @original_Wynagrodzenie_brutto) OR ([Wynagrodzenie_brutto] IS NULL AND @original_Wynagrodzenie_brutto IS NULL)) AND (([Obywatelstwo] = @original_Obywatelstwo) OR ([Obywatelstwo] IS NULL AND @original_Obywatelstwo IS NULL)) AND (([Maksymalny_wiek_kandydata] = @original_Maksymalny_wiek_kandydata) OR ([Maksymalny_wiek_kandydata] IS NULL AND @original_Maksymalny_wiek_kandydata IS NULL)) AND (([Wyksztalcenie] = @original_Wyksztalcenie) OR ([Wyksztalcenie] IS NULL AND @original_Wyksztalcenie IS NULL)) AND (([Zawod] = @original_Zawod) OR ([Zawod] IS NULL AND @original_Zawod IS NULL)) AND (([Staz_pracy] = @original_Staz_pracy) OR ([Staz_pracy] IS NULL AND @original_Staz_pracy IS NULL)) AND (([Uprawnienia] = @original_Uprawnienia) OR ([Uprawnienia] IS NULL AND @original_Uprawnienia IS NULL)) AND (([Kontakt_telefoniczny] = @original_Kontakt_telefoniczny) OR ([Kontakt_telefoniczny] IS NULL AND @original_Kontakt_telefoniczny IS NULL)) AND (([Data_dodania] = @original_Data_dodania) OR ([Data_dodania] IS NULL AND @original_Data_dodania IS NULL))" InsertCommand="INSERT INTO [OFERTA] ([Id_stanowiska], [Forma_zatrudnienia], [Etat_oferta], [Wynagrodzenie_brutto], [Obywatelstwo], [Maksymalny_wiek_kandydata], [Wyksztalcenie], [Zawod], [Staz_pracy], [Uprawnienia], [Kontakt_telefoniczny], [Data_dodania]) VALUES (@Id_stanowiska, @Forma_zatrudnienia, @Etat_oferta, @Wynagrodzenie_brutto, @Obywatelstwo, @Maksymalny_wiek_kandydata, @Wyksztalcenie, @Zawod, @Staz_pracy, @Uprawnienia, @Kontakt_telefoniczny, @Data_dodania)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Nazwa_stanowiska]
 	   ,CONVERT(varchar(10),Data_dodania,23) As Data_dodania
