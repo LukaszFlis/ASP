@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="filtruj_kandydat.aspx.cs" Inherits="WebApplication1.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+    <br />
+    <br />
     <asp:GridView ID="GV_kandydat" runat="server" Width="1204px" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="GV_DataSql" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
     <Columns>
         <asp:BoundField DataField="Imie_kandydata" HeaderText="Imie_kandydata" SortExpression="Imie_kandydata" />
@@ -21,20 +24,20 @@
         <SortedDescendingCellStyle BackColor="#F1E5CE" />
         <SortedDescendingHeaderStyle BackColor="#93451F" />
 </asp:GridView>
+    <br />
     <asp:Label ID="Label1" runat="server" Text="Data_urodzenia_od"></asp:Label>
 &nbsp;&nbsp;
-<asp:TextBox ID="TextBox1" runat="server" Width="150px" AutoPostBack="True"></asp:TextBox>
+<asp:TextBox ID="TextBox1" runat="server" Width="150px"></asp:TextBox>
     <br>
     <asp:Label ID="Label2" runat="server" Text="Obywatelstwo"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<asp:TextBox ID="TextBox2" runat="server" Width="150px" AutoPostBack="True"></asp:TextBox>
+<asp:TextBox ID="TextBox2" runat="server" Width="150px"></asp:TextBox>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Wyksztalcenie"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<asp:TextBox ID="TextBox3" runat="server" Width="150px" AutoPostBack="True" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+<asp:TextBox ID="TextBox3" runat="server" Width="150px"></asp:TextBox>
     <br />
 <asp:Button ID="wyszukaj" runat="server" OnClick="Button1_Click" Text="wyszukaj" Width="269px" />
-    <br />
     <br />
 <asp:SqlDataSource ID="GV_DataSql" runat="server" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" SelectCommand="-- Znajduje kandydatów spełniających wymagania formalne danej oferty
 SELECT Imie_kandydata, Nazwisko_kandydata, Adres_kandydata, Telefon_Kandydata, CONVERT (varchar(10),Data_urodzenia,23) as Data_urodzenia, Wyksztalcenie_kandydata, CONVERT (varchar(10),Data_aplikacji,23) as Data_aplikacji, Nazwa_stanowiska
@@ -57,8 +60,6 @@ WHERE Data_urodzenia &gt;= @data AND Obywatelstwo_kandydata = @obywatel AND Wyks
     </SelectParameters>
     
 </asp:SqlDataSource>
-    <br />
-    <br />
     <br />
     <br />
 </asp:Content>

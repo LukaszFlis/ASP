@@ -3,18 +3,12 @@
     <br/>
     <br/>
     <br/>
-    <asp:GridView ID="GV_Dodaj_oferta" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="Id_oferty" DataSourceID="GV_sql_data" Width="941px">
+    <br />
+    <asp:GridView ID="GV_Dodaj_oferta" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="Id_oferty" DataSourceID="GV_sql_data" Width="1251px">
     <Columns>
         <asp:CommandField ShowSelectButton="True" />
         <asp:BoundField DataField="Id_oferty" HeaderText="Id_oferty" InsertVisible="False" ReadOnly="True" SortExpression="Id_oferty" />
-        <asp:TemplateField HeaderText="Nazwa_stanowiska" SortExpression="Nazwa_stanowiska">
-            <EditItemTemplate>
-                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Nazwa_stanowiska") %>'></asp:TextBox>
-            </EditItemTemplate>
-            <ItemTemplate>
-                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Nazwa_stanowiska") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
+        <asp:BoundField DataField="Nazwa_stanowiska" HeaderText="Nazwa_stanowiska" SortExpression="Nazwa_stanowiska" />
         <asp:BoundField DataField="Data_dodania" HeaderText="Data_dodania" ReadOnly="True" SortExpression="Data_dodania" />
     </Columns>
     <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
@@ -33,9 +27,8 @@
         <asp:BoundField DataField="Id_oferty" HeaderText="Id_oferty" InsertVisible="False" ReadOnly="True" SortExpression="Id_oferty" />
         <asp:TemplateField HeaderText="Id_stanowiska" SortExpression="Id_stanowiska">
             <EditItemTemplate>
-                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Nazwa_stanowiska" DataValueField="Id_stanowiska" SelectedValue='<%# Bind("Id_stanowiska") %>'>
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nazwa_stanowiska" DataValueField="Id_stanowiska" SelectedValue='<%# Bind("Id_stanowiska") %>'>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" SelectCommand="SELECT DISTINCT [Id_stanowiska], [Nazwa_stanowiska] FROM [STANOWISKO]"></asp:SqlDataSource>
             </EditItemTemplate>
             <InsertItemTemplate>
                 <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Id_stanowiska") %>'></asp:TextBox>
@@ -105,6 +98,7 @@ ON o.Id_stanowiska = s.Id_stanowiska
         <asp:Parameter Name="Id_oferty" Type="Decimal" />
     </UpdateParameters>
 </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" SelectCommand="SELECT [Id_stanowiska], [Nazwa_stanowiska] FROM [STANOWISKO]"></asp:SqlDataSource>
 <br />
 <br />
 </asp:Content>

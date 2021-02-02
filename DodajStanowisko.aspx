@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DodajStanowisko.aspx.cs" Inherits="WebApplication1.DodajStanowisko" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    `<asp:DetailsView ID="GV_DodajStanowisko" runat="server" AllowPaging="True" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="Id_stanowiska" DataSourceID="GV_DataSql" Height="50px" Width="125px">
+    `<br />
+    <br />
+    <br />
+    <br />
+    <asp:DetailsView ID="GV_DodajStanowisko" runat="server" AllowPaging="True" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="Id_stanowiska" DataSourceID="GV_DataSql" Height="50px" Width="1242px">
     <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
     <Fields>
         <asp:BoundField DataField="Id_stanowiska" HeaderText="Id_stanowiska" InsertVisible="False" ReadOnly="True" SortExpression="Id_stanowiska" />
@@ -30,12 +34,5 @@
         <asp:Parameter Name="Id_stanowiska" Type="Decimal" />
     </UpdateParameters>
 </asp:SqlDataSource>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 </asp:Content>

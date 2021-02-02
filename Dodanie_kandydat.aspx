@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dodanie_kandydat.aspx.cs" Inherits="WebApplication1.DodajKandydat" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <br/>
+    <br />
+    <br />
+    <br/>
     <asp:DetailsView ID="DV_DodajKandydat" runat="server" AllowPaging="True" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="GV_DataSql" Height="50px" Width="1220px" AutoGenerateRows="False" DataKeyNames="Id_kandydata">
     <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
         <Fields>
@@ -15,7 +18,7 @@
             <asp:BoundField DataField="Staz_kandydata" HeaderText="Staz_kandydata" SortExpression="Staz_kandydata" />
             <asp:BoundField DataField="Uprawnienia_kandydata" HeaderText="Uprawnienia_kandydata" SortExpression="Uprawnienia_kandydata" />
             <asp:BoundField DataField="Telefon_kandydata" HeaderText="Telefon_kandydata" SortExpression="Telefon_kandydata" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
         </Fields>
     <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
     <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
@@ -23,7 +26,7 @@
     <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
 </asp:DetailsView>
 <br />
-<asp:SqlDataSource ID="GV_DataSql" runat="server" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" DeleteCommand="DELETE FROM [KANDYDAT] WHERE [Id_kandydata] = @Id_kandydata" InsertCommand="INSERT INTO [KANDYDAT] ([Imie_kandydata], [Nazwisko_kandydata], [Data_urodzenia], [Obywatelstwo_kandydata], [Adres_kandydata], [Wyksztalcenie_kandydata], [Zawod_kandydata], [Staz_kandydata], [Uprawnienia_kandydata], [Telefon_kandydata]) VALUES (@Imie_kandydata, @Nazwisko_kandydata, @Data_urodzenia, @Obywatelstwo_kandydata, @Adres_kandydata, @Wyksztalcenie_kandydata, @Zawod_kandydata, @Staz_kandydata, @Uprawnienia_kandydata, @Telefon_kandydata)" SelectCommand="SELECT * FROM [KANDYDAT]" UpdateCommand="UPDATE [KANDYDAT] SET [Imie_kandydata] = @Imie_kandydata, [Nazwisko_kandydata] = @Nazwisko_kandydata, [Data_urodzenia] = @Data_urodzenia, [Obywatelstwo_kandydata] = @Obywatelstwo_kandydata, [Adres_kandydata] = @Adres_kandydata, [Wyksztalcenie_kandydata] = @Wyksztalcenie_kandydata, [Zawod_kandydata] = @Zawod_kandydata, [Staz_kandydata] = @Staz_kandydata, [Uprawnienia_kandydata] = @Uprawnienia_kandydata, [Telefon_kandydata] = @Telefon_kandydata WHERE [Id_kandydata] = @Id_kandydata">
+<asp:SqlDataSource ID="GV_DataSql" runat="server" ConnectionString="<%$ ConnectionStrings:ONLINE_HRConnectionString %>" SelectCommand="SELECT * FROM [KANDYDAT] ORDER BY [Id_kandydata]" DeleteCommand="DELETE FROM [KANDYDAT] WHERE [Id_kandydata] = @Id_kandydata" InsertCommand="INSERT INTO [KANDYDAT] ([Imie_kandydata], [Nazwisko_kandydata], [Data_urodzenia], [Obywatelstwo_kandydata], [Adres_kandydata], [Wyksztalcenie_kandydata], [Zawod_kandydata], [Staz_kandydata], [Uprawnienia_kandydata], [Telefon_kandydata]) VALUES (@Imie_kandydata, @Nazwisko_kandydata, @Data_urodzenia, @Obywatelstwo_kandydata, @Adres_kandydata, @Wyksztalcenie_kandydata, @Zawod_kandydata, @Staz_kandydata, @Uprawnienia_kandydata, @Telefon_kandydata)" UpdateCommand="UPDATE [KANDYDAT] SET [Imie_kandydata] = @Imie_kandydata, [Nazwisko_kandydata] = @Nazwisko_kandydata, [Data_urodzenia] = @Data_urodzenia, [Obywatelstwo_kandydata] = @Obywatelstwo_kandydata, [Adres_kandydata] = @Adres_kandydata, [Wyksztalcenie_kandydata] = @Wyksztalcenie_kandydata, [Zawod_kandydata] = @Zawod_kandydata, [Staz_kandydata] = @Staz_kandydata, [Uprawnienia_kandydata] = @Uprawnienia_kandydata, [Telefon_kandydata] = @Telefon_kandydata WHERE [Id_kandydata] = @Id_kandydata">
     <DeleteParameters>
         <asp:Parameter Name="Id_kandydata" Type="Decimal" />
     </DeleteParameters>

@@ -16,9 +16,5 @@ namespace WebApplication1
             //User?.Identity.Name
         }
 
-        protected void DV_EdytujKandydat_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
-
-        }
     }
 }
